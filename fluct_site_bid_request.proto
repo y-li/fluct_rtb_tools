@@ -1,0 +1,53 @@
+message FluctSiteBidRequest {
+    // request format version (fixed value)
+    required int32 version = 1;
+
+    message BCat {
+        optional uint32 iab = 1;
+    }
+
+    message Imp {
+        // unique ID of impression
+        required string impid = 1;
+        // height (in pixel)
+        required uint32 h = 2;
+        // width (in pixel)
+        required uint32 w = 3;
+        // IP address
+        required string ip = 4;
+        // user agent
+        required string ua = 5;
+        // ad inventory category ID
+        required uint32 cat = 6;
+        // array of blocked ad inventory category IDs
+        repeated BCat bcat = 7;
+        // ad position
+        optional uint32 pos = 8;
+        // inventory ID
+        optional string frameid = 9;
+    }
+
+    required Imp imp = 2;
+
+    message Site {
+        // site ID
+        required string sid = 1;
+        // page URL
+        required string page = 2;
+        // domain of the site
+        optional string sdomain = 3;
+        // referrer of the page
+        optional string ref = 4;
+    }
+
+    required Site site = 3;
+
+    message User {
+        // SSP administrator ID
+        required string uid = 1;
+        // DSP administraotr ID
+        optional string dspuid = 2;
+    }
+
+    required User user = 4;
+}

@@ -1,0 +1,25 @@
+message FluctBidResponse {
+    // unique impression ID
+    required string impid = 1;
+    // response ID
+    optional string bidid = 2;
+    // reason of nonparticipation of auction
+    optional uint32 nbr = 3;
+    // currency (JPY, USD etc.)
+    required string cur = 4;
+
+    message Bid {
+        // bid price (CPM)
+        required double price = 1;
+        // ad HTML
+        required bytes adm = 2;
+        // ad ID
+        optional string adid = 3;
+        // ad category ID
+        optional uint32 adcat = 4;
+        // domain of advertiser site
+        optional string adomain = 5;
+    }
+
+    optional Bid bid = 5; // if not set it means no bid
+}

@@ -1,0 +1,7 @@
+*.o
+*.out
+*.swp
+*.bin
+*.pb.h
+*.pb.cc
+*.txt
