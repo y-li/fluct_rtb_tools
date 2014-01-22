@@ -1,0 +1,13 @@
+{
+    "impid":"49f492c2-6226-49f5-87f7-1b8098f37d5e",
+    "bidid":"test",
+    "nbr":1,
+    "cur":"JPY",
+    "bid": {
+        "price":50,
+        "adm":"string1024",
+        "adid":"test",
+        "adcat":1,
+        "adomain":"toyota.co.jp"
+    }
+}

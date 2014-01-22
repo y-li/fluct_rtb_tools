@@ -1,0 +1,23 @@
+{
+    "version":1
+    "imp":{
+        "impid":"49f492c2-6226-49f5-87f7-1b8098f37d5e",
+        "h":90,
+        "w":728,
+        "ip":"220.110.139.200",
+        "ua":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1"
+        "cat":1,
+        "bcat":[{"iab",1},{"iab",2}],
+        "pos":1
+    },
+    "site"{
+        "sid":"0001",
+        "page":"http://adingo.jp/top.html",
+        "sdomain":"http://adingo.jp",
+        "ref":"https://www.google.co.jp/#fp=6b2ad3809afae70f&q=adingo",
+    },
+    "user":{
+        "uid":"60f492c2-6226-49f5-87f7-1b8098f37d5e",
+        "dspuid":"test",
+    }
+}

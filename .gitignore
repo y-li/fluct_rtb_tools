@@ -5,3 +5,4 @@
 *.pb.h
 *.pb.cc
 *.txt
+*.log
