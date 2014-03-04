@@ -7,6 +7,8 @@
 #include        "fluct_app_bid_request.pb.h"
 #include        "fluct_bid_response.pb.h"
 
+using namespace fluct_rtb;
+
 static bool
 generate_site_bid_request_sample(const std::string &filename)
 {

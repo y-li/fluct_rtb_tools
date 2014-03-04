@@ -1,3 +1,5 @@
+package fluct_rtb;
+
 message FluctSiteBidRequest {
     // request format version (fixed value)
     required int32 version = 1;

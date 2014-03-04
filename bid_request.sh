@@ -13,7 +13,7 @@ TRACE=$4
 if [ $FORMAT = "JSON" ] ; then
     cat $DATA | curl --verbose --trace-ascii ${TRACE} --trace-time --header "Content-Type: application/json" --header "Connection: keep-alive" --user-agent "FluctRTBbot/1.0(+http://fluct.jp)" --data @- $ENDPOINT
 elif [ $FORMAT = "PROTOBUF" ] ; then
-    cat $DATA | curl --verbose --trace-ascii ${TRACE} --trace-time --header "Connection: keep-alive" --user-agent "FluctRTBbot/1.0(+http://fluct.jp)" --data @- $ENDPOINT
+    cat $DATA | curl --verbose --trace-ascii ${TRACE} --trace-time --header "Content-Type: application/octet-stream" --header "Connection: keep-alive" --user-agent "FluctRTBbot/1.0(+http://fluct.jp)" --data-binary @- $ENDPOINT
 else
     echo "Unknown format:" $FORMAT 1>&2
     exit 1

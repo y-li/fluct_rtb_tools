@@ -8,7 +8,7 @@ PROTOC = protoc
 PROTOHDRS = fluct_site_bid_request.pb.h fluct_app_bid_request.pb.h fluct_bid_response.pb.h
 PROTOSRCS = fluct_site_bid_request.pb.cc fluct_app_bid_request.pb.cc fluct_bid_response.pb.cc
 OBJECTS = fluct_site_bid_request.pb.o fluct_app_bid_request.pb.o fluct_bid_response.pb.o generate_bid_sample.o
-TARGETS = generate_bid_sample.out
+TARGETS = generate_bid_sample.out fluct_site_bid_request.out fluct_app_bid_request.out fluct_bid_response.out
 
 all: ${TARGETS}
 
@@ -24,19 +24,30 @@ generate_bid_sample.o: generate_bid_sample.cc ${PROTOHDRS}
 generate_bid_sample.out: ${OBJECTS}
 	${CXX} ${OFLAGS} -o $@ $^
 
+generate_schemas: fluct_site_bid_request.out fluct_app_bid_request.out fluct_bid_response.out
+
+fluct_site_bid_request.out: fluct_site_bid_request.proto
+	protoc -o$@ $^
+
+fluct_app_bid_request.out: fluct_app_bid_request.proto
+	protoc -o$@ $^
+
+fluct_bid_response.out: fluct_bid_response.proto
+	protoc -o$@ $^
+
 check_samples: check_site_bid_request_sample check_app_bid_request_sample check_bid_response_sample
 
 check_site_bid_request_sample: generate_bid_sample.out
 	./generate_bid_sample.out -s
-	cat fluct_site_bid_request_sample.bin | protoc --decode=FluctSiteBidRequest fluct_site_bid_request.proto
+	cat fluct_site_bid_request_sample.bin | protoc --decode=fluct_rtb.FluctSiteBidRequest fluct_site_bid_request.proto
 
 check_app_bid_request_sample: generate_bid_sample.out
 	./generate_bid_sample.out -a
-	cat fluct_app_bid_request_sample.bin | protoc --decode=FluctAppBidRequest fluct_app_bid_request.proto
+	cat fluct_app_bid_request_sample.bin | protoc --decode=fluct_rtb.FluctAppBidRequest fluct_app_bid_request.proto
 
 check_bid_response_sample: generate_bid_sample.out
 	./generate_bid_sample.out -r
-	cat fluct_bid_response_sample.bin | protoc --decode=FluctBidResponse fluct_bid_response.proto
+	cat fluct_bid_response_sample.bin | protoc --decode=fluct_rtb.FluctBidResponse fluct_bid_response.proto
 
 TXT1 = "123.456e-06"
 TXT2 = "USD123.456e+07"

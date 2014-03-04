@@ -1,3 +1,5 @@
+package fluct_rtb;
+
 message FluctBidResponse {
     // unique impression ID
     required string impid = 1;
