@@ -22,14 +22,14 @@ generate_site_bid_request_sample(const std::string &filename)
 
     sreq.set_version(1);
     sreq.mutable_imp()->set_impid("49f492c2-6226-49f5-87f7-1b8098f37d5e");
-    sreq.mutable_imp()->set_h(90);
-    sreq.mutable_imp()->set_w(728);
+    sreq.mutable_imp()->set_h(250);
+    sreq.mutable_imp()->set_w(300);
     sreq.mutable_imp()->set_ip("220.110.139.200");
     sreq.mutable_imp()->set_ua("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1");
     sreq.mutable_imp()->set_cat(1);
     FluctSiteBidRequest_BCat    *sreq_bcat = NULL;
     sreq_bcat = sreq.mutable_imp()->add_bcat();
-    sreq_bcat->set_iab(1);
+    sreq_bcat->set_iab(3);
     sreq_bcat = sreq.mutable_imp()->add_bcat();
     sreq_bcat->set_iab(2);
     sreq.mutable_imp()->set_pos(1);
@@ -41,7 +41,7 @@ generate_site_bid_request_sample(const std::string &filename)
     sreq.mutable_site()->set_ref("https://www.google.co.jp/#fp=6b2ad3809afae70f&q=adingo");
 
     sreq.mutable_user()->set_uid("60f492c2-6226-49f5-87f7-1b8098f37d5e");
-    sreq.mutable_user()->set_dspuid("a_test_dspuid");
+    sreq.mutable_user()->set_dspuid("xxxxxxxxxxxxxxxx");
 
     FluctSiteBidRequest         sreq_parse;
     std::string                 outstring;
