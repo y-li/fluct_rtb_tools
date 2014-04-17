@@ -60,10 +60,10 @@ TCPDUMP = ${shell which tcpdump}
 TRACE = ./trace-ascii.log
 
 bid_request_json:
-	sh -x bid_request.sh ${ENDPOINT} ${DATA} JSON ${TRACE}
+	sh -x bid_request.sh "${ENDPOINT}" "${DATA}" JSON "${TRACE}"
 
 bid_request_protobuf:
-	sh -x bid_request.sh ${ENDPOINT} ${DATA} PROTOBUF ${TRACE}
+	sh -x bid_request.sh "${ENDPOINT}" "${DATA}" PROTOBUF "${TRACE}"
 
 capture_packets:
 	sudo ${TCPDUMP} -vvv -XX -e -s 0 host ${DSP_HOST}

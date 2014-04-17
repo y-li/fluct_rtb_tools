@@ -1,0 +1,21 @@
+{
+    "version":1
+    "imp":{
+        "impid":"49f492c2-6226-49f5-87f7-1b8098f37d5e",
+        "h":50,
+        "w":320,
+        "ip":"220.110.139.200",
+        "ua":"Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3",
+        "cat":1,
+        "bcat":[{"iab",1},{"iab",2}],
+        "pos":1
+    },
+    "app"{
+        "aid":"0000001",
+        "aname":"a test app"
+    },
+    "user":{
+        "uid":"60f492c2-6226-49f5-87f7-1b8098f37d5e",
+        "dspuid":"test",
+    }
+}
